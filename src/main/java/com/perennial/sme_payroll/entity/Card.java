@@ -3,15 +3,24 @@ package com.perennial.sme_payroll.entity;
 
 import com.perennial.sme_payroll.exceptions.InvalidInputException;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Entity
 public class Card {
 
+    @Id
     private int employeeId;
     private long cardNumber;
     private String type;
     private String date;
+
+    @OneToOne
+    private Employee cardToEmployee;
 
     public int getEmployeeId() {
         return employeeId;

@@ -2,14 +2,23 @@ package com.perennial.sme_payroll.entity;
 
 import com.perennial.sme_payroll.exceptions.InvalidInputException;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Entity
 public class Wallet {
 
+    @Id
     private int employeeId;
     private long mobileNumber;
     private String provider;
+
+    @OneToOne
+    private Employee walletToEmployee;
+
 
     public int getEmployeeId() {
         return employeeId;

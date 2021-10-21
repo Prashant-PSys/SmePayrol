@@ -43,11 +43,6 @@ public class ExcelReader implements FileReader {
             employees.add(employee);
         }
 
-      /*  for (List<String> e:employees)
-        {
-            System.out.println(e);
-        }
-       */
         return employees;
     }
 }

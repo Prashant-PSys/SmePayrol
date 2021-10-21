@@ -1,5 +1,4 @@
 package com.perennial.sme_payroll.service;
-
 import com.perennial.sme_payroll.dao.EmployeeRepo;
 import com.perennial.sme_payroll.entity.Employee;
 import com.perennial.sme_payroll.entity.Error;
@@ -7,7 +6,6 @@ import com.perennial.sme_payroll.helper.DataValidation;
 import com.perennial.sme_payroll.helper.ErrorEmployeeMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 
@@ -15,13 +13,13 @@ import java.util.List;
 public class UploadEmployee {
 
     @Autowired
-    DataValidation dataValidation;
+    DataValidation employeeValidation;
     @Autowired
     EmployeeRepo empRepo;
 
     public void upload(List<List<String>> rows)
     {
-        ErrorEmployeeMap map=dataValidation.validate(rows);
+        ErrorEmployeeMap map=employeeValidation.validate(rows);
 
         for(Employee e: map.getEmployees())
         {

@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Service
+@Service("employeeValidation")
 public class EmployeeValidation implements DataValidation {
 
 

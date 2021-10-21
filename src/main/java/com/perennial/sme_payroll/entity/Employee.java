@@ -4,8 +4,8 @@ package com.perennial.sme_payroll.entity;
 import com.perennial.sme_payroll.exceptions.InvalidInputException;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,6 +26,15 @@ public class Employee {
     private String depositeType;
     private int monthlySalary;
 
+
+    @ManyToOne
+    private Sme employeeToSme;
+
+    @OneToOne(mappedBy = "cardToEmployee")
+    private Card cards;
+
+    @OneToOne(mappedBy = "walletToEmployee")
+    private Wallet wallets;
 
     public String getuEN() {
         return uEN;

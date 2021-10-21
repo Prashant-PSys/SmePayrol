@@ -2,12 +2,22 @@ package com.perennial.sme_payroll.entity;
 
 import com.perennial.sme_payroll.exceptions.InvalidInputException;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Payroll {
-    private String uIN;
+
+    @Id
     private int employeeId;
+    private String uIN;
     private int monthDays;
     private int payableDays;
     private int payableAmount;
+
+    @ManyToOne
+    private Sme payrollToSme;
 
     public String getuIN() {
         return uIN;

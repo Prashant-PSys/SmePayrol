@@ -2,16 +2,28 @@ package com.perennial.sme_payroll.entity;
 
 import com.perennial.sme_payroll.exceptions.InvalidInputException;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Entity
 public class Sme {
 
+    @Id
     private String uEN;
     private String name;
     private String address;
     private long mobileNumber;
     private long accountNumber;
+
+    @OneToMany(mappedBy = "employeeToSme")
+    private List<Employee> employees;
+
+    @OneToMany(mappedBy = "payrollToSme")
+    private List<Payroll> payrolls;
 
     public String getuEN() {
         return uEN;
