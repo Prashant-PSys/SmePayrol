@@ -132,6 +132,26 @@ public class Employee {
     }
 
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", uEN='" + uEN + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", mobileNumber=" + mobileNumber +
+                ", AadharNumber=" + AadharNumber +
+                ", dOJ='" + dOJ + '\'' +
+                ", gender='" + gender + '\'' +
+                ", designation='" + designation + '\'' +
+                ", depositeType='" + depositeType + '\'' +
+                ", monthlySalary=" + monthlySalary +
+                ", employeeToSme=" + employeeToSme +
+                ", cards=" + cards +
+                ", wallets=" + wallets +
+                '}';
+    }
+
     public void setMonthlySalary(int monthlySalary){
             this.monthlySalary = monthlySalary;
 
